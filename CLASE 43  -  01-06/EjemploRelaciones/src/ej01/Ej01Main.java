@@ -30,7 +30,7 @@ public class Ej01Main {
 
         System.out.println("");
         for (Persona aux : personas) {
-            System.out.println("Para la persona " + aux.getNombre() + " " + aux.getApellido() + " \nseleccione el nombre de uno de los siguientes perros en adopción: ");
+            System.out.println("Para la persona " + aux.getNombre() + " " + aux.getApellido() + " \nseleccione el nombre de uno de los siguientes \nperros en adopción: ");
             for (Perro aux2 : perrosadoptables) {
                 System.out.println("Nombre: " + aux2.getNombre() + " - Raza: " + aux2.getRaza());
             }
