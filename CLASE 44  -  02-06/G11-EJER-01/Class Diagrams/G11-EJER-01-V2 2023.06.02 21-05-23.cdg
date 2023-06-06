@@ -2,7 +2,7 @@
 
 <ClassDiagram name="G11-EJER-01-V2">
   <ClassDiagramComponents>
-    <Class name="Perro" package="Entidad" visibility="public" xPosition="27.0" yPosition="250.0">
+    <Class name="Perro" package="Entidad" visibility="public" xPosition="112.0" yPosition="424.0">
       <Fields>
         <Field name="nombre" type="String" visibility="private"/>
         <Field name="raza" type="String" visibility="private"/>
@@ -38,7 +38,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="Persona" package="Entidad" visibility="public" xPosition="540.0" yPosition="275.0">
+    <Class name="Persona" package="Entidad" visibility="public" xPosition="852.0" yPosition="396.0">
       <Fields>
         <Field name="nombre" type="String" visibility="private"/>
         <Field name="apellido" type="String" visibility="private"/>
@@ -79,7 +79,7 @@
         <Method name="toString" returnType="String" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="PerroServicio" package="Entidad.Servicio" visibility="public" xPosition="371.0" yPosition="20.0">
+    <Class name="PerroServicio" package="Entidad.Servicio" visibility="public" xPosition="210.0" yPosition="36.0">
       <Fields>
         <Field name="p1" type="Perro" visibility="package"/>
         <Field name="leer" type="Scanner" visibility="package"/>
@@ -89,7 +89,7 @@
         <Method name="crearPerro" returnType="Perro" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="PersonaServicio" package="Entidad.Servicio" visibility="public" xPosition="633.0" yPosition="20.0">
+    <Class name="PersonaServicio" package="Entidad.Servicio" visibility="public" xPosition="964.0" yPosition="36.0">
       <Fields>
         <Field name="p1" type="Persona" visibility="private"/>
         <Field name="leer" type="Scanner" visibility="package"/>
@@ -101,7 +101,7 @@
         <Method name="crearPersona" returnType="Persona" visibility="public"/>
       </Methods>
     </Class>
-    <Class name="G11EJER01V2" package="g11.ejer.pkg01.v2" visibility="public" xPosition="1220.0" yPosition="20.0">
+    <Class name="G11EJER01V2" package="g11.ejer.pkg01.v2" visibility="public" xPosition="518.0" yPosition="152.0">
       <Fields/>
       <Constructors/>
       <Methods>
@@ -112,11 +112,11 @@
     </Class>
   </ClassDiagramComponents>
   <ClassDiagramRelations>
-    <HasRelation name="p1" source="Entidad.Servicio.PerroServicio" target="Entidad.Perro" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
-    <HasRelation name="mascota" source="Entidad.Persona" target="Entidad.Perro" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="Entidad.Persona" target="Entidad.Perro" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="mascota" source="Entidad.Persona" target="Entidad.Perro" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <HasRelation name="p1" source="Entidad.Servicio.PersonaServicio" target="Entidad.Persona" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="Entidad.Servicio.PerroServicio" target="Entidad.Perro" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="p1" source="Entidad.Servicio.PerroServicio" target="Entidad.Perro" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
     <UseRelation source="Entidad.Servicio.PersonaServicio" target="Entidad.Persona" sourceCardinality="1..1" targetCardinality="1..1"/>
   </ClassDiagramRelations>
 </ClassDiagram>
