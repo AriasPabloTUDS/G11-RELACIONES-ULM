@@ -12,12 +12,14 @@ package Entidades;
 public class Jugador {
     private Integer id;
     private String nombre;
-    private Boolean mojado;
+    private boolean mojado;
 
-    public Jugador(Integer id, String nombre, Boolean mojado) {
+    public Jugador(Integer id) {
         this.id = id;
-        this.nombre = nombre;
-        this.mojado = mojado;
+        String ids = this.id.toString();
+        ids = "Jugador ".concat(ids);
+        this.nombre = ids;
+        this.mojado = false;
     }
 
     public Jugador() {
@@ -39,11 +41,11 @@ public class Jugador {
         this.nombre = nombre;
     }
 
-    public Boolean getMojado() {
+    public boolean getMojado() {
         return mojado;
     }
 
-    public void setMojado(Boolean mojado) {
+    public void setMojado(boolean mojado) {
         this.mojado = mojado;
     }
 

@@ -5,7 +5,6 @@
  */
 package Entidades.Servicios;
 
-import Entidades.Arma;
 import Entidades.Jugador;
 
 /**
@@ -13,24 +12,23 @@ import Entidades.Jugador;
  * @author Pablo
  */
 public class JugadorServicio {
-    
-    private ArmaServicio aS;
+    private RevolverServicio RevolverS;
     private Jugador j;
 
-    public JugadorServicio() {
-        aS = new ArmaServicio();
+    public JugadorServicio(RevolverServicio revolver) {
+        this.j = new Jugador();
+        this.RevolverS = revolver;
     }
     
     
-    public Boolean disparo(Arma r){
-        aS.mojar();
-        aS.siguienteChorro();
-        
-        boolean disparo = (aS.mojar()) ;
-            
-        j.setMojado(!disparo);
-        System.out.println("El jugador se mojo? "+disparo);
-        return disparo;
+    public Boolean disparo(RevolverServicio revolver){
+        boolean verif = false;
+        if (revolver.mojar()) {
+            j.setMojado(true);
+            verif = true;
+        }
+       
+        return verif;
     }
     
 }

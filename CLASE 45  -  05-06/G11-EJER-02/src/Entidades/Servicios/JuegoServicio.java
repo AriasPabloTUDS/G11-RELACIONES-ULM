@@ -5,10 +5,65 @@
  */
 package Entidades.Servicios;
 
-/**
- *
- * @author Pablo
- */
+import Entidades.Revolver;
+import Entidades.Jugador;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
 public class JuegoServicio {
+    private Scanner leer ;
+    private Jugador j;
+    private ArrayList<Jugador> jugadores;
+
+    public JuegoServicio() {
+        leer = new Scanner(System.in).useDelimiter("\n");
+        jugadores = new ArrayList();
+    }
+    
+    
+    public void llenarJuego( Revolver revolver){
+        int cant = 0;
+        System.out.println("Ingrese la cantidad de jugadores entre 2 y 6");
+        cant = leer.nextInt();
+        if (cant >=2 && cant <=6) {
+            for (int i = 0; i < cant; i++) {
+            System.out.println("Jugador "+(i+1));
+            j = new Jugador(i+1);
+            jugadores.add(j);
+                    
+        }
+        } else System.out.println("error ingrese de 1 a 6 jugadores");
+        
+    }
+    
+    public boolean ronda(RevolverServicio rvServicio){
+        boolean juegoSigue = true;
+        int turno = 0;
+        while (juegoSigue) {
+            
+            if (turno == jugadores.size()){
+                turno = 0;
+            }
+            System.out.println("El " + jugadores.get(turno) + " procede a disparar");
+            if(rvServicio.posicionTambor() == rvServicio.posicionBalaDeAgua()) {
+                System.out.println("Mojado puto");
+                juegoSigue = false;
+            } else {
+                System.out.println("Se salvo ");
+                juegoSigue = true;
+                rvServicio.siguienteChorro();
+                turno ++;
+            }
+        }
+       
+        return juegoSigue;
+    }
+
+    @Override
+    public String toString() {
+        return "JuegoServicio{" + "jugadores=" + jugadores + '}';
+    }
+    
     
 }

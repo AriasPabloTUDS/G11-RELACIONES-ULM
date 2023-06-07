@@ -9,11 +9,11 @@ package Entidades;
  *
  * @author Pablo
  */
-public class Arma {
+public class Revolver {
     private Integer pasAct;
-    private Integer posH2o;
+    private Integer posAgua;
 
-    public Arma() {
+    public Revolver() {
     }
 
     public Integer getPasAct() {
@@ -24,17 +24,17 @@ public class Arma {
         this.pasAct = pasAct;
     }
 
-    public Integer getPosH2o() {
-        return posH2o;
+    public Integer getPosAgua() {
+        return posAgua;
     }
 
-    public void setPosH2o(Integer posH2o) {
-        this.posH2o = posH2o;
+    public void setPosAgua(Integer posAgua) {
+        this.posAgua = posAgua;
     }
 
     @Override
     public String toString() {
-        return "Arma{" + "pasAct=" + pasAct + ", posH2o=" + posH2o + '}';
+        return "Arma{" + "pasAct=" + pasAct + ", posH2o=" + posAgua + '}';
     }
     
     

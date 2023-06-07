@@ -5,20 +5,23 @@
  */
 package Entidades.Servicios;
 
-import Entidades.Arma;
+import Entidades.Revolver;
 
 /**
  *
  * @author Pablo
  */
-public class ArmaServicio {
+public class RevolverServicio {
     
-    private Arma revolver;
+    private Revolver revolver;
     
   
 
-    public ArmaServicio() {
-        revolver  = new Arma();
+    public RevolverServicio(Revolver rev) {
+        this.revolver = rev;
+    }
+
+    RevolverServicio() {
     }
     
     
@@ -26,17 +29,14 @@ public class ArmaServicio {
         Integer posran1 = (int) (Math.random() * 6 + 1);
         Integer posran2 = (int) (Math.random() * 6 + 1);
         
-        System.out.println("pa "+posran1);
-        System.out.println("ph2o "+posran2);
-        
         revolver.setPasAct(posran1);
-        revolver.setPosH2o(posran2);
+        revolver.setPosAgua(posran2);
         
     }
     
     public Boolean mojar(){
         Boolean mojar;
-        if (revolver.getPasAct().equals(revolver.getPosH2o())) {
+        if (revolver.getPasAct().equals(revolver.getPosAgua())) {
             mojar = true;
         } else mojar = false;
         
@@ -44,8 +44,8 @@ public class ArmaServicio {
     }
     
     public void mostrarPosiciones(){
-        System.out.println("pa "+revolver.getPasAct());
-        System.out.println("ph2o "+revolver.getPosH2o());
+        System.out.println("posición actual: "+revolver.getPasAct());
+        System.out.println("posición de agua:  "+revolver.getPosAgua());
         
     }
     
@@ -57,6 +57,13 @@ public class ArmaServicio {
         
     }
     
+    public Integer posicionBalaDeAgua(){
+        return revolver.getPosAgua();
+    }
+    
+    public Integer posicionTambor(){
+        return revolver.getPasAct();
+    }
     
     
 }
